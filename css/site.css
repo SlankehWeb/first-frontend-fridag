@@ -13,6 +13,7 @@ h2 {
   font-family: "Merriweather", serif;
   font-size: 2em;
   text-transform: capitalize;
+  
 }
 
 p {
@@ -30,6 +31,17 @@ header p {
   font-size: 1.2em;
   padding: 0px;
   margin: 0px;
+  animation: animateIn ease 2s;
+  animation-iteration-count: 1;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+
+header h1 {
+  animation: animateIn ease 2s;
+  animation-iteration-count: 1;
+  animation-delay: 1s;
+  animation-fill-mode: both;
 }
 
 #app {
@@ -47,10 +59,14 @@ header p {
   border-radius: 10px;
   min-height: 400px;
   width: 375px;
+  opacity: 0;
+  animation: fadeInAnimation, spin ease 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 .galleryCard img {
   max-width: 375px;
-  max-height: 500px;
+  max-height: 500px; 
 }
 
 .galleryCard h2 {
@@ -60,3 +76,43 @@ header p {
 .galleryCard p {
   padding: 2px 10px 20px 10px;
 }
+
+@keyframes animateIn {
+  from {
+      transform: translateX(-900px);
+  }
+  to {
+      transform: translateX(0px)
+  }
+}
+
+@keyframes fadeInAnimation { 
+	100% { opacity: 1; }
+}
+.galleryCard figure {
+	animation: FadeInAnimation 2s forwards;
+}
+#app figure:nth-child(1) {
+	animation-delay: 2.5s;
+}
+#app figure:nth-child(2) {
+	animation-delay: 3s;
+}
+#app figure:nth-child(3) {
+	animation-delay: 3.5s;
+}
+#app figure:nth-child(4) {
+	animation-delay: 4s;
+}
+
+
+@keyframes spin {
+  from {
+      transform:scale(0) rotate(0deg);
+     
+  }
+  to {
+    transform:scale(1) rotate(360deg);
+  }
+}
+
